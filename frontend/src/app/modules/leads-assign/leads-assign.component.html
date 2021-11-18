@@ -1,0 +1,42 @@
+
+ <div class="mainDiv row">
+  <div class="card col-md-12">
+    <div class="row">
+    <div class="card-header p-2">
+      <div class="row">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td style="color: #fff;border:0px;"><p class="tagline">Total Leads : <small class="taglineNumber">{{count0}}</small></p></td>
+            <td style="color: #fff;border:0px;" class="pt-1"><h4>Assign Leads</h4>
+              <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-climbing-dot">
+                <p style="color: white">Data Loading is in Progress</p>
+              </ngx-spinner></td>
+            <td style="color: #fff;border:0px;" class="pt-1"><input type="file" class="file-input" (change)="leadFileUpload($event)" accept=".csv" #fileUpload>
+              <button class="btn btn-primary btn-sm" (click)="fileUpload.click()">Upload</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+  <div class="card-body text-center">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary mr-2" (click)="ScreenNaviagte(1)">
+        UnAssigned  <span class="badge badge-dark">{{ count1 }}</span>
+      </button>
+      <button type="button" class="btn btn-success mr-2" (click)="ScreenNaviagte(2)">
+        Assigned  <span class="badge badge-dark">{{ count2 }}</span>
+      </button>
+      <button type="button" class="btn btn-danger mr-2" (click)="ScreenNaviagte(3)">
+        Onboarded   <span class="badge badge-dark">{{ count3 }}</span>
+      </button>
+    </div>
+      <div [ngSwitch]="component" class="text-left row">
+          <app-unassigned-lead *ngSwitchCase="'unassign'">  </app-unassigned-lead>
+          <app-assigned-lead *ngSwitchCase="'assigned'">  </app-assigned-lead>
+          <app-onboarded-lead *ngSwitchCase="'onboarded'">  </app-onboarded-lead>
+      </div>
+  </div>
+</div>  
+</div>

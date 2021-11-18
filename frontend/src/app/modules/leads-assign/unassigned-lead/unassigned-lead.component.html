@@ -1,0 +1,157 @@
+<!-- <div class="row">
+    <div class="col-sm-6">
+      <div class="form-outline">
+        <input type="search" id="form1" class="form-control" placeholder="Search" />
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <form class="form-inline" [formGroup] = "assignLeadFormData" (ngSubmit)="assignLead()">
+        <div class="col-sm-3" style="text-align: right;">
+          <label>Assign To</label>
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control form-control-md" (keyup)="userInput($event.target)" 
+                value={{selectedValue}} placeholder="Enter UserName">
+            <label *ngIf="userNoRecord == 'Yes'" style="color: red;">* No User Found!</label>
+            <select *ngIf="UserResData?.length" multiple class="form-control form-control-sm" (change)="userSelected($event)" formControlName="userId" >
+                <option *ngFor="let userDetails of UserResData" value={{userDetails._id}}>
+                  {{userDetails.user}}
+                </option>
+            </select>
+        </div>
+        <div class="col-sm-5" style="text-align: center;">
+          <button type="submit" class="btn btn-primary btn-sm">Assign</button>
+        </div>
+        </form>
+    </div>
+</div><br>
+<div class="mat-elevation-z8">
+    <table mat-table class="full-width-table" matSort aria-label="Elements">
+        <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+              <mat-checkbox class="btn-block" [(ngModel)]="isMasterSelected" (change) = "checkUncheckAll()"></mat-checkbox>Select All</th>
+            <td mat-cell *matCellDef="let element">
+              <mat-checkbox class="btn-block" [(ngModel)]="element.isSelected" (change)="selectedLead($event,element._id )"></mat-checkbox>
+              </td>
+          </ng-container>
+        <ng-container matColumnDef="center">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Center Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.center}}</td>
+        </ng-container>
+        <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+            <td mat-cell *matCellDef="let element"> {{element.address}}</td>
+        </ng-container>
+        <ng-container matColumnDef="city">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+            <td mat-cell *matCellDef="let element"> {{element.city}}</td>
+        </ng-container>
+        <ng-container matColumnDef="pincode">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pincode</th>
+          <td mat-cell *matCellDef="let element"> {{element.pincode}}</td>
+        </ng-container>
+        <ng-container matColumnDef="contact">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Contact Person</th>
+            <td mat-cell *matCellDef="let element"> {{element.contact}}</td>
+        </ng-container>
+        <ng-container matColumnDef="mobile">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Mobile</th>
+            <td mat-cell *matCellDef="let element"> {{element.mobile}}</td>
+        </ng-container>
+        <ng-container matColumnDef="landline">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Landline</th>
+          <td mat-cell *matCellDef="let element"> {{element.landline}}</td>
+        </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator #paginator 
+    [length]="unAssignedLeads?.data?.length"
+    [pageIndex]="0"
+    [pageSize]="10"
+    [pageSizeOptions]="[20, 50, 100, 500, 1000]">
+</mat-paginator>
+</div> -->
+
+<div class="row my-2">
+  <div class="col-sm-6">
+    <div class="form-outline">
+      <input type="search" id="form1" class="form-control mb-2" placeholder="Search" (keyup)="searchUserInput($event.target)" />
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <form class="form-inline" [formGroup] = "assignLeadFormData" (ngSubmit)="assignLead()">
+      <div class="col-sm-3 my-2">
+        <label class="mt-1">Assign To</label>
+      </div>
+      <div class="col-sm-4 mb-2">
+          <input type="text" class="form-control form-control-md" (keyup)="userInput($event.target)" 
+              value={{selectedValue}} placeholder="Enter UserName">
+          <label *ngIf="userNoRecord == 'Yes'" style="color: red;">* No User Found!</label>
+          <select *ngIf="UserResData?.length" multiple class="form-control form-control-sm" (change)="userSelected($event)" formControlName="userId" >
+              <option *ngFor="let userDetails of UserResData" value={{userDetails._id}}>
+                {{userDetails.user}}
+              </option>
+          </select>
+      </div>
+      <div class="col-sm-5 my-2" style="text-align: center;">
+        <button type="submit" class="btn btn-primary btn-sm">Assign</button>
+      </div>
+      </form>
+  </div>
+</div>
+<div class="mat-elevation-z8 overflow-auto mt-2 p-2">
+    <table mat-table class="full-width-table" matSort aria-label="Elements">
+        <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+              <mat-checkbox class="btn-block" [(ngModel)]="isMasterSelected" (change) = "checkUncheckAll()"></mat-checkbox><br>Select All</th>
+            <td mat-cell *matCellDef="let element">
+              <mat-checkbox class="btn-block" [(ngModel)]="element.isSelected" (change)="selectedLead($event,element._id )"></mat-checkbox>
+              </td>
+          </ng-container>
+        <ng-container matColumnDef="center">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Center Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.center}}</td>
+        </ng-container>
+        <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+            <td mat-cell *matCellDef="let element"> {{element.address}}</td>
+        </ng-container>
+        <ng-container matColumnDef="city">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+            <td mat-cell *matCellDef="let element"> {{element.city}}</td>
+        </ng-container>
+        <ng-container matColumnDef="pincode">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pincode</th>
+          <td mat-cell *matCellDef="let element"> {{element.pincode}}</td>
+        </ng-container>
+        <ng-container matColumnDef="contact">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Contact Person</th>
+            <td mat-cell *matCellDef="let element"> {{element.contact}}</td>
+        </ng-container>
+        <ng-container matColumnDef="mobile">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Mobile</th>
+            <td mat-cell *matCellDef="let element"> {{element.mobile}}</td>
+        </ng-container>
+        <ng-container matColumnDef="landline">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Landline</th>
+          <td mat-cell *matCellDef="let element"> {{element.landline}}</td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+          <td mat-cell *matCellDef="let element"> {{element.email}}</td>
+        </ng-container>
+        <ng-container matColumnDef="platform_type">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Platform Type</th>
+          <td mat-cell *matCellDef="let element"> {{element.platform_type}}</td>
+        </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator #paginator 
+    [length]="unAssignedLeads?.data?.length"
+    [pageIndex]="0"
+    [pageSize]="10"
+    [pageSizeOptions]="[20, 50, 100, 500, 1000, 2000, 2500, 5000]">
+</mat-paginator>
+</div>

@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row mb-2 pt-2">
+        <mat-toolbar color="primary">
+          <span>Select Scheme</span>
+          <span class="example-spacer"></span>
+          <span [mat-dialog-close]="true" class="pull-right">
+            <mat-icon class="close-icon">close</mat-icon>
+          </span>  
+        </mat-toolbar>
+    </div>
+    <div class="row">
+        <div class="col-md-12 hospTable overflow-auto">
+            <div class="row">
+                <div class="col-md-5">
+                    <h2 class="mb-2">No Cost EMIs</h2>
+                    <span class="error" *ngIf="errorNonPolicy">* No Default Scheme Selected</span>
+                    <div class="row" *ngFor="let nonSchemes of allNonPolicySchemesList; let j=index">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">{{nonSchemes._id}} EMIs</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let nonSchemeDetail of nonSchemes.list; let k= index" style="width: 100%;">
+                                    <td><input type="radio" value={{nonSchemeDetail.id}} name="nonPolicyDefalult" (change)=defaultNonPolicySelected(nonSchemeDetail.id)></td>
+                                    <td><input type="radio" value={{nonSchemeDetail.id}} name="nonPolicy_{{j}}" (change)="selectedScheme(nonSchemeDetail.id,null,j,k)"></td>
+                                    <td style="width: 60%;">{{nonSchemeDetail.name}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <h2 class="mb-2">Advance Against Policy</h2>
+                    <span class="error" *ngIf="errorPolicy">* No Default Scheme Selected</span>
+                    <div class="row" *ngFor="let schemes of allPolicySchemesList; let i=index">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">{{schemes._id}} Days</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let schemeDetail of schemes.list; let k=index" style="width: 100%;">
+                                    <td><input type="radio" value={{schemeDetail.id}} name="policyDefalult" (change)="defaultPolicySelected(schemeDetail.id)"></td>
+                                    <td><input type="radio" value={{schemeDetail.id}} name="policy_{{i}}" (change)="selectedScheme(schemeDetail.id,i,null,k)"></td>
+                                    <td style="width: 60%;">{{schemeDetail.name}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <span class="error" *ngIf="error">*Default Scheme should be from allocated Scheme</span>
+        </div>
+        <div class="row saveButton">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4 ">
+                
+                <!-- <button mat-button  cdkFocusInitial>Save</button> -->
+
+            </div>
+           
+        </div>
+        <div class="row">
+            <button class="button btn btn-outline-success" (click)="saveSelectedScheme()">Save</button>
+        </div>
+        <div class="row">
+            <span class="noteHead">NOTE : - </span>
+            <span class="note"><li>"Advance Against Mediclaim" will be applicable only for Hospitals.</li>
+                <li>Please select one "Default Scheme" for "NO Cost EMI" & one for "Advance Against MediClaim".</li>
+                <li>Please select "N.A" under "Advance Against Mediclaim" for Dentist/IVF/Treatments not covered in MediClaim.</li>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.light-text{
+    color: red;
+    font-size: small;
+}
+
+.card {
+    position: absolute;
+    left:0;
+    right: 0;
+}
+.input-group{
+    padding-bottom: 10px;
+}
+.btn {
+    font-size: 10.5px;
+    white-space: pre-wrap;
+}
+.mat-table thead, .mat-table tbody, .mat-table tfoot, mat-header-row, mat-row, mat-footer-row, [mat-header-row], [mat-row], [mat-footer-row], .mat-table-sticky {
+    background: inherit;
+    text-align: left;
+}

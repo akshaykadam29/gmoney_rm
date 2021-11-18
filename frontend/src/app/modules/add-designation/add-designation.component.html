@@ -1,0 +1,31 @@
+<div class="mainDiv row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mt-1">Designation</h4>
+            </div>
+            <div class="card-body">
+                <form [formGroup] = "designationForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label>Role</label>   
+                            <input type="text" class="form-control" placeholder="" formControlName= "role">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label>Sort</label>
+                            <input class="form-control" type="text" formControlName = "sort">
+                        </div> -->
+                        <!-- <div class="form-group">
+                            <label>Role Access</label>
+                            <div *ngFor= "let role of access">
+                                <input class="form-cotrol checkbox" type="checkbox" formControlName = "roleAccess" [value] = "role.value" (change)= "getselectedBox($event,role.value)">{{role.name}}
+                            </div>
+                        </div> -->
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary btn-block">Add</button>
+                        </div>
+                </form>
+            </div>     
+            </div>    
+    </div>
+         
+</div>

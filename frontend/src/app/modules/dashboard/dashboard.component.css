@@ -1,0 +1,40 @@
+.th1Style {
+  font-size: 14px;
+  border: black 2px solid;
+  text-align: center;
+}
+
+.thStyle {
+  font-size: 12px;
+  border: black 2px solid;
+}
+
+.trStyle {
+  font-size: 12px;
+}
+
+.divStyle {
+  vertical-align: middle;
+}
+
+.table {
+  border: gray 1px solid;
+}
+
+.row {
+  --bs-gutter-x: none;
+}
+
+.heading {
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Akshay CSS */
+.table-bordered {
+  border: 2px solid black;
+}
+.content-center {
+  text-align: center;
+}

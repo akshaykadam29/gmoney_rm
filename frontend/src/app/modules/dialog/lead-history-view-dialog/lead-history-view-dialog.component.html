@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row mb-2 pt-2">
+        <mat-toolbar color="primary">
+          <span>Lead History</span>
+          <span class="example-spacer"></span>
+          <span mat-dialog-close class="pull-right">
+            <mat-icon>close</mat-icon>
+          </span>  
+        </mat-toolbar>
+    </div>
+    <div class="col-sm-12 hospTable overflow-auto">
+        <table class="table table-striped col-md-8">
+            <thead class="tableHead thStyle">
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Remark</th>
+                    <th scope="col">Action</th>
+                    <th scope="col">Action Date</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let history of leadHistoryDetails">
+                    <td>{{history.date | date: "dd/MM/yyyy hh:mm" }}</td>
+                    <td>{{history.status}}</td>
+                    <td>{{history.remarks}}</td>
+                    <td>{{history.action}}</td>
+                    <td>{{history.actionDate.date | date : "dd/MM/yyyy hh:mm a"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

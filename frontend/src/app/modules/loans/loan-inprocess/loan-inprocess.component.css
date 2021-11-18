@@ -1,0 +1,15 @@
+.trStyle{
+    font-size: 12px;
+    text-align: center;
+}
+
+.thStyle{
+    font-size: 14px;
+    text-align: center;
+}
+td{
+    word-wrap: break-word;
+    min-width:100px;
+    max-width:150px;
+    font-size: 12px;
+}

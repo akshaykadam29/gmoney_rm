@@ -1,0 +1,32 @@
+<div class="mainDiv">
+  <div class="card text-center">
+    <header class="card-header">
+      <h2 class="card-title">Onboardings</h2>
+    </header>
+    <div class="card-body text-center">
+      <div class="btn-group mb-3">
+        <button type="button" class="btn btn-sm btn-outline-primary nav-btn mr-2 fa-pull-left"
+          (click)="ScreenNaviagte(1)">
+          New <span class="badge badge-dark">{{ count1 }}</span>
+        </button>
+        <button type="button" class="btn btn-outline-secondary countButton mr-2" (click)="ScreenNaviagte(2)">
+          Claimed <span class="badge badge-dark">{{ count2 }}</span>
+        </button>
+        <button type="button" class="btn btn-outline-warning countButton fa-pull-right" (click)="ScreenNaviagte(3)">
+          My Onboardings <span class="badge badge-dark">{{ count3 }}</span>
+        </button>
+      </div>
+      <div class="btn-group mb-3 ml-1" *ngIf="!userType">
+        <button type="button" class="btn btn-outline-success countButton fa-pull-right" (click)="ScreenNaviagte(4)">
+          Approval <span class="badge badge-dark">{{ count4 }}</span>
+        </button>
+      </div>
+      <div [ngSwitch]="component" class="text-center">
+        <app-unclaimed-hospital *ngSwitchCase="'new'"></app-unclaimed-hospital>
+        <app-claimed-hospital *ngSwitchCase="'claimed'"></app-claimed-hospital>
+        <app-my-claimed-hospital *ngSwitchCase="'myclaimed'"></app-my-claimed-hospital>
+        <app-claim-scheme-approval *ngSwitchCase="'approval'"></app-claim-scheme-approval>
+      </div>
+    </div>
+  </div>
+</div>

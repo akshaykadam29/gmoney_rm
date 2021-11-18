@@ -1,0 +1,65 @@
+.trStyle{
+    font-size: 12px;
+}
+
+.thStyle{
+    font-size: 14px;
+    align-content: center;
+}
+
+td{
+    word-wrap: break-word;
+    min-width:100px;
+    max-width:150px;
+    font-size: 11px;
+}
+
+.file-field.big .file-path-wrapper {
+    height: 3.2rem; }
+    .file-field.big .file-path-wrapper .file-path {
+    height: 3rem; 
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 40px;
+    padding-top:5px;
+  }
+.file-input {
+    display: none;
+  }
+  .bg-gmoney {
+    background-color: #1c4792;
+    display: flex;
+    justify-content: center;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    background-color: #154890;
+    color: #ffffff;
+    border: none !important;
+}
+.hrhead {
+  border: 1px solid red;
+  width: 35%;
+  margin-bottom: 2em;
+}
+.table td {
+  width: 10%;
+}
+.table>:not(caption)>*>* {
+  padding: 0.2rem 0.5rem;
+}
+.table thead th {
+  font-weight: 500;
+  font-size: 12px;
+}
+.table tbody td {
+  font-size: 11px;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+  display: flow-root;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 40px;
+  padding-top:5px;
+}

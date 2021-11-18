@@ -1,0 +1,36 @@
+.form-login {
+    border-radius: 0px;
+    border: none;
+    border-bottom: none;
+    font-size: 10px;
+    background-color: #eee;
+    border-radius: 20px;
+    height: 35px;
+}
+.login-box { 
+    border-radius: 20px;
+    border: 1px solid #1548902b;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  } 
+
+  .card-header {
+    color: #1c4792;
+    background-color: white;
+    border-radius: 15px!important;
+    border-bottom: 0px;
+    font-weight: 500 !important;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    position: fixed;
+    top: 25%;
+    background-color: #fff;
+    background-clip: initial;
+}

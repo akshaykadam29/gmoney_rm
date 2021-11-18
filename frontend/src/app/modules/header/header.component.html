@@ -1,0 +1,249 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-light">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['dashboard']" routerLinkActive="active">
+      <img src="../assets/GMONEY-LOGO.jpg" alt="" width="130" height="" class="d-inline-block align-text-top">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div *ngIf="router.url != '/login' && check == 'Super Admin' " class="collapse navbar-collapse"
+      id="navbarSupportedContent">
+      <ul class="navbar-nav ms-md-auto gap-2">
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['dashboard']"
+            routerLinkActive="active">Leader Board</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['center']"
+            routerLinkActive="active">Network</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['loans']"
+            routerLinkActive="active">Applications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['lms']"
+            routerLinkActive="active">Leads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['claim']"
+            routerLinkActive="active">Onboardings</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color :white;" href="#">Assign</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['assign']"
+                routerLinkActive="active">Assign-Center</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['assign-lead']"
+                routerLinkActive="active">Assign-Lead</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color :white;" href="#">Create</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['designation']"
+                routerLinkActive="active">Role Master</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['add']"
+                routerLinkActive="active">User Master</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color :white;" href="#">Effort</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['my-effort']"
+                routerLinkActive="active">My Effort</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['team-effort']"
+                routerLinkActive="active">Team Effort</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-items">
+          <a *ngIf="router.url != '/login'" (click)="logout()">
+            <i class="fa fa-sign-out" style="margin-top: 10px;" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="router.url != '/login' && check == 'Admin' " class="collapse navbar-collapse"
+      id="navbarSupportedContent">
+      <ul class="navbar-nav ms-md-auto gap-2">
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['dashboard']"
+            routerLinkActive="active">Leader Board</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['center']"
+            routerLinkActive="active">Network</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['loans']"
+            routerLinkActive="active">Applications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['lms']"
+            routerLinkActive="active">Leads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['claim']"
+            routerLinkActive="active">Onboardings</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color :white;" href="#">Assign</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['assign']"
+                routerLinkActive="active">Assign-Center</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['assign-lead']"
+                routerLinkActive="active">Assign-Lead</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color :white;" href="#">Create</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['add']"
+                routerLinkActive="active">User Master</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color :white;" href="#">Effort</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['my-effort']"
+                routerLinkActive="active">My Effort</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['team-effort']"
+                routerLinkActive="active">Team Effort</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-items">
+          <a *ngIf="router.url != '/login'" (click)="logout()">
+            <i class="fa fa-sign-out" style="margin-top: 10px;" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="router.url != '/login' && check == 'SubAdmin' " class="collapse navbar-collapse"
+      id="navbarSupportedContent">
+      <ul class="navbar-nav ms-md-auto gap-2">
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['dashboard']"
+            routerLinkActive="active">Leader Board</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['center']"
+            routerLinkActive="active">Network</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['loans']"
+            routerLinkActive="active">Applications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['lms']"
+            routerLinkActive="active">Leads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['claim']"
+            routerLinkActive="active">Onboardings</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color :white;" href="#">Assign</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['assign']"
+                routerLinkActive="active">Assign-Center</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['assign-lead']"
+                routerLinkActive="active">Assign-Lead</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color :white;" href="#">Effort</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['my-effort']"
+                routerLinkActive="active">My Effort</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['team-effort']"
+                routerLinkActive="active">Team Effort</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-items">
+          <a *ngIf="router.url != '/login'" (click)="logout()">
+            <i class="fa fa-sign-out" style="margin-top: 10px;" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="router.url != '/login' && check == 'User' " class="collapse navbar-collapse"
+      id="navbarSupportedContent">
+      <ul class="navbar-nav ms-md-auto gap-2">
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['dashboard']"
+            routerLinkActive="active">Leader Board</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['center']"
+            routerLinkActive="active">Network</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['loans']"
+            routerLinkActive="active">Applications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['lms']"
+            routerLinkActive="active">Leads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color :white;" aria-current="page" [routerLink]="['claim']"
+            routerLinkActive="active">Onboardings</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color :white;" href="#">Effort</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['my-effort']"
+                routerLinkActive="active">My Effort</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color :black;" aria-current="page" [routerLink]="['team-effort']"
+                routerLinkActive="active">Team Effort</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-items">
+          <a *ngIf="router.url != '/login'" (click)="logout()">
+            <i class="fa fa-sign-out" style="margin-top: 10px;" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

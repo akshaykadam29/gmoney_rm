@@ -1,0 +1,71 @@
+<div class="mainDiv">
+  <div class="container text-right mb-2">
+    Welcome {{ LoggedInUser }}
+  </div>
+  <div class="card text-center">
+    <div class="card-header">
+      <h2 class="card-title">Leader Board</h2>
+    </div>
+    <div class="card-body ml-3 mr-3">
+      <div class="row">
+        <div class="col-sm-5">
+          <table class="table col-sm-12">
+            <thead class="thStyle">
+              <tr>
+                <td colspan="2" class="heading">National Ranking</td>
+              </tr>
+            </thead>
+          </table>
+          <table class="table content-center col-sm-12" style="border: 2px solid black;">
+            <thead>
+              <tr>
+                <th scope="col" style="border-bottom: 2px solid black;">User Name</th>
+                <th scope="col" style="border-bottom: 2px solid black;">Onboarded This Month</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let  nationalRank of nationalRanking">
+                <td style="width: 50%;">{{ nationalRank.name}} </td>
+                <td>{{ nationalRank.hospSize}} </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-6 divStyle" style="padding-bottom: 30px;">
+          <table class="table col-sm-12">
+            <thead class="thStyle">
+              <tr>
+                <td colspan="2" class="heading">Regional Ranking</td>
+              </tr>
+            </thead>
+          </table>
+          <div class="row" *ngFor="let regionRank of regionalRanking">
+            <table class="table content-center" style="border: 2px solid black;">
+              <thead>
+                <tr>
+                  <th colspan="2" class="th1Style">{{regionRank._id}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let regionUser of regionRank.userHospList">
+                  <td style="width: 50%;">
+                    {{ regionUser.name}}
+                  </td>
+                  <td>
+                    {{ regionUser.count}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

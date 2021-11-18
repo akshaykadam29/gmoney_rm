@@ -1,0 +1,78 @@
+<div class="mainDiv">
+    <div class="card">
+        <!-- <div class="card-header" >
+            <h4 class="card-title mt-2">Lead Management System</h4>
+        </div> -->
+        <div class="row">
+            <div class="card-header p-2">
+              <div class="row">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td style="color: #fff;border:0px;" class="pt-1"><h4>Lead Management System</h4>
+                      <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-climbing-dot">
+                        <p style="color: white">Data Loading is in Progress</p>
+                      </ngx-spinner></td>
+                    <td style="color: #fff;border:0px;" class="pt-1">
+                      <button class="btn btn-primary btn-sm" (click)="ScreenNaviagte(10)">Add Lead</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+          </div>
+        <div class="card-body text-center">
+            <div class="btn-group text-center mb-1">
+                <button type="button" class="btn btn-success countButton mr-2" (click)="ScreenNaviagte(1)">
+                    Calender
+                </button> 
+                <button type="button" class="btn btn-primary countButton mr-2" (click)="ScreenNaviagte(2)">
+                    Assigned
+                </button>
+                <button type="button" class="btn btn-warning countButton mr-1" (click)="ScreenNaviagte(3)">
+                    Call Later
+                </button>
+            </div>
+            <div class="btn-group text-center mb-1">
+                <button type="button" class="btn btn-success-1 countButton mr-2" (click)="ScreenNaviagte(4)">
+                    Visit
+                </button>
+                <button type="button" class="btn btn-primary-1 countButton mr-2" (click)="ScreenNaviagte(5)">
+                    In Process
+                </button> 
+                <button type="button" class="btn btn-warning-1 countButton mr-1" (click)="ScreenNaviagte(6)">
+                    Link Sent
+                </button>
+            </div>
+            <div class="btn-group text-center mb-1">
+                <button type="button" class="btn btn-success-2 countButton mr-2" (click)="ScreenNaviagte(7)">
+                    Onboarded
+                </button>
+                <button type="button" class="btn btn-danger countButton mr-2" (click)="ScreenNaviagte(8)">
+                    Not Interested
+                </button>
+                <button type="button" class="btn btn-danger countButton mr-2" (click)="ScreenNaviagte(9)">
+                    Doesn't Exist
+                </button>
+            </div>  
+            <div class="btn-group text-center mb-1">
+                <button type="button" class="btn btn-warning-1 countButton mr-2" (click)="ScreenNaviagte(11)">
+                    Hot Leads
+                </button>
+            </div> 
+            <div [ngSwitch]="component">
+                <app-rm-appoinment-lead *ngSwitchCase="'appoinment'"></app-rm-appoinment-lead>
+                <app-rm-assigned-lead *ngSwitchCase="'assigned'"></app-rm-assigned-lead>
+                <app-rm-call-later-lead *ngSwitchCase="'call'"></app-rm-call-later-lead>
+                <app-rm-visit-lead *ngSwitchCase="'visit'"></app-rm-visit-lead>
+                <app-rm-in-process-lead *ngSwitchCase="'inProcess'"></app-rm-in-process-lead>
+                <app-rm-link-sent-lead *ngSwitchCase="'linkSent'"></app-rm-link-sent-lead>
+                <app-rm-onboard-lead *ngSwitchCase="'onboarded'"></app-rm-onboard-lead>
+                <app-rm-not-interested-lead *ngSwitchCase="'notInterested'"></app-rm-not-interested-lead>
+                <app-rm-doesnot-exist-lead *ngSwitchCase="'doesntExist'"></app-rm-doesnot-exist-lead>
+                <app-rm-add-lead *ngSwitchCase="'addLead'"></app-rm-add-lead>
+                <app-rm-marketing-lead *ngSwitchCase="'marketing'"></app-rm-marketing-lead>
+            </div>
+        </div>
+    </div>
+</div>

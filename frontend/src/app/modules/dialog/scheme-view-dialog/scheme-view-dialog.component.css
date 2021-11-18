@@ -1,0 +1,72 @@
+.bg-gmoney {
+    background-color: #1c4792;
+    display: flex;
+    justify-content: center;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    background-color: #154890;
+    color: #ffffff;
+    border: none !important;
+}
+.hrhead {
+  border: 1px solid red;
+  width: 35%;
+  margin-bottom: 2em;
+}
+.table td {
+  width: 10%;
+}
+.table>:not(caption)>*>* {
+  padding: 0.5rem 0.5rem;
+}
+.table thead th {
+  font-weight: 500;
+  font-size: 12px;
+}
+.table tbody td {
+  font-size: 11px;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+  display: flow-root;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 40px;
+  padding-top:5px;
+}
+
+.error{
+  font-size: small;
+  color: red;
+  font-weight: bold;
+}
+
+h2{
+  font-size: medium;
+  font-weight: bold;
+  color: grey;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.mat-button{
+  border-radius: 10px;
+ background-color: grey;
+}
+
+.note{
+  font-size: 12px;
+  color: black;
+}
+
+.noteHead{
+  font-size: 14px;
+  color: red;
+  text-decoration: underline;
+}
+
+.button {
+  position: relative;
+  left: 40%;
+}

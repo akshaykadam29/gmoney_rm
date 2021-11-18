@@ -1,0 +1,60 @@
+<div class="row my-2">
+  <div class="col-md-6">
+    <label>Direct Reportee :</label> 
+    <select class="browser-default custom-select"  (change)= "directRepSelected($event)">
+        <option value= "" selected>Select</option>  
+        <option *ngFor= "let dirRep of allDirectReportee" [value] = "dirRep._id" >{{ dirRep.name }}</option>
+        <option value="All">All</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label>L2 Reportee:</label> 
+    <select class="browser-default custom-select"  (change)= "directChildSelected($event)">
+        <option value= "" selected>Select</option>  
+        <option *ngFor= "let childRep of allChildReportee" [value] = "childRep._id" >{{ childRep.name }}</option>
+        <option  value="All">All</option>
+    </select>
+  </div>
+</div>
+
+<div class="col-sm-12 hospTable overflow-auto">
+    <table class="table table-striped col-md-8">
+      <thead class="tableHead thStyle">
+        <tr>
+          <th scope="col">Onboarded On</th>
+          <th scope="col">Center Id</th>
+          <th scope="col">Center Name</th>
+          <th scope="col">Contact Person</th>
+          <th scope="col">Contact Number</th>
+          <th scope="col">Address</th>
+          <th scope="col">Remarks</th>
+          <th scope="col">Status</th>
+          <th scope="col-2">Branding</th>
+          <th scope="col" *ngIf="hierarchy">Assigned To</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hospital of hospitalResponseList; let i=index" class="trStyle">
+          <td>{{ hospital.created_on | date : 'dd-MM-yyyy'}}</td>
+          <td>{{hospital.hid}}</td>
+          <td >{{hospital.name}}</td>
+          <td>{{ getContactName(hospital.contact_persons[0].name, hospital.directors[0].name) }} </td>
+          <td>{{ getContactNum(hospital.contact_persons[0].contactNumber, hospital.directors[0].contactNumber) }}</td>
+          <td>{{hospital.address}}, {{hospital.city}}, {{hospital.state}}</td>
+          <td>{{hospital.remarks}}</td>
+          <td>{{ getHospitalStatus(hospital.agreement_details.agreement_sent, hospital.agreement_details.agreement_signed,hospital.directors[0].agreement_signed) }}</td>
+          <td>
+            <input type="file" class="file-input" (change)="onFileSelected($event,i,hospital.hid,hospital._id)" accept="image/*" #fileUpload multiple>
+              <div class="file-upload" *ngIf="!hospital.uploadButton && !hospital.channelPartnerBranding">
+                  <button class="btn btn-primary btn-sm" (click)="fileUpload.click()">Upload</button>
+              </div>
+              <div *ngIf="hospital.channelPartnerBranding">
+                <button class="btn btn-success btn-sm" (click)='viewFileinDialog(hospital.channelPartnerBranding)'>View</button>
+              </div>
+            </td>
+          <td *ngIf="hierarchy">{{hospital.rm_assigned.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

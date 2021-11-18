@@ -1,0 +1,55 @@
+<div class="mainDiv">
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Applications</h2>
+    </div>
+    <div class="card-body text-center">
+      <div class="btn-group btn-group-toggle text-center mb-3" data-toggle="buttons">
+        <label class="btn btn-outline-primary btn-sm active mr-2">
+          <input type="radio" name="options" id="option1" (click)="ScreenNaviagte(1)" checked> In
+          process
+          <span class="badge badge-dark">{{ count1 }}</span>
+        </label>
+        <label class="btn btn-outline-danger btn-sm mr-2">
+          <input type="radio" name="options" id="option2" (click)="ScreenNaviagte(2)"> Rejected
+          <span class="badge badge-dark">{{ count2 }}</span>
+        </label>
+        <label class="btn btn-outline-warning btn-sm mr-2">
+          <input type="radio" name="options" id="option3" (click)="ScreenNaviagte(3)"> Approved
+          <span class="badge badge-dark">{{ count3 }}</span>
+        </label>
+        <label class="btn btn-outline-success btn-sm">
+          <input type="radio" name="options" id="option4" (click)="ScreenNaviagte(4)"> Disbursed
+          <span class="badge badge-dark">{{ count4 }}</span>
+        </label>
+      </div>
+
+      <!-- Old code start -->
+      <!-- <div class="btn-group text-center mb-3">
+        <button type="button" class="btn btn-primary countButton mr-2" (click)="ScreenNaviagte(1)">
+          In Process <span class="badge badge-dark">{{ count1 }}</span>
+        </button>
+        <button type="button" class="btn btn-danger countButton mr-2" (click)="ScreenNaviagte(2)">
+          Rejected <span class="badge badge-dark">{{ count2 }}</span>
+        </button>
+      </div>
+      <div class="btn-group text-center mb-3">
+        <button type="button" class="btn btn-warning countButton mr-2" (click)="ScreenNaviagte(3)">
+          Approved <span class="badge badge-dark">{{ count3 }}</span>
+        </button>
+        <button type="button" class="btn btn-success countButton" (click)="ScreenNaviagte(4)">
+          Disbursed <span class="badge badge-dark">{{ count4 }}</span>
+        </button>
+      </div> -->
+      <!-- Old code end -->
+
+      <div [ngSwitch]="component">
+        <app-loan-inprocess *ngSwitchCase="'inprocess'"></app-loan-inprocess>
+        <app-loan-rejected *ngSwitchCase="'rejected'"></app-loan-rejected>
+        <app-loan-approved *ngSwitchCase="'approved'"></app-loan-approved>
+        <app-loan-disbursed *ngSwitchCase="'disbursed'"></app-loan-disbursed>
+      </div>
+    </div>
+  </div>
+</div>

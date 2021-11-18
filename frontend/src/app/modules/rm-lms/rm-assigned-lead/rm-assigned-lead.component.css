@@ -1,0 +1,31 @@
+.centered {
+    margin-right:auto; 
+    margin-left:auto ; 
+}
+.textCenter{
+    margin-right:auto; 
+    margin-left:auto ;
+    text-align: center;
+}
+
+  .form-control {
+    border-radius: 0px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+}
+.form-group{
+    padding: 5px 0px;
+}
+.form-group label{
+    margin-right: 2px;
+}
+.table tbody, td, tfoot, th, thead, tr{
+    border: none;
+}
+.table td, .table th {
+    border-top: none;
+}
+.table tbody p{
+    font-size: 12px;
+    text-align: left;
+}

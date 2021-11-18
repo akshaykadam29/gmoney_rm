@@ -1,0 +1,53 @@
+<div class="col-md-6 centered">
+
+    <div class="row">
+        <div class="card mb-4 mt-2">
+           <form [formGroup] ="saveSingleLeadDetails" (ngSubmit)="saveLeadDetails()">
+             <table class="table">
+                 <tbody>
+                     <input type="text" [style.display]="'none'" class="form-control"  formControlName = "lead_id">
+                     <tr>
+                         <td><p>Center</p></td>
+                         <td><input type="text" class="form-control"  formControlName = "center"></td>
+                     </tr>
+                     <tr>
+                         <td><p>Address</p></td>
+                         <td><textarea type="text" class="form-control"  formControlName = "address"></textarea></td>
+                     </tr>
+                     <tr>
+                         <td><p>City</p></td>
+                         <td><input type="text" class="form-control"  formControlName = "city"></td>
+                     </tr>
+                     <tr>
+                         <td><p>Contact</p></td>
+                         <td><input type="text" class="form-control"  formControlName = "contact"></td>
+                     </tr>
+                     <tr>
+                         <td><p>Mobile</p></td>
+                         <td><input type="text" class="form-control"  formControlName = "mobile"></td>
+                     </tr>
+                     <tr>
+                         <td><p>Landline</p></td>
+                         <td><input type="text" class="form-control" formControlName = "landline"></td>
+                     </tr>
+                     <tr>
+                        <td><p>Pincode</p></td>
+                        <td><input type="text" class="form-control" formControlName = "pincode"></td>
+                    </tr>
+                 </tbody>
+             </table>
+             <div class="form-group mb-3">
+                 <table class="table">
+                     <tbody>
+                         <tr>
+                             <td>
+                                 <button type="submit" class="btn btn-success btn-sm textCenter" id="buttonStyle">Save</button>
+                             </td>
+                         </tr>
+                     </tbody>
+                 </table>                   
+             </div>
+         </form>
+        </div>
+         </div>
+ </div>

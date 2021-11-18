@@ -1,0 +1,187 @@
+<div class="col-md-6 centered">
+    <div class="form-group mt-2">
+        <div class="row">
+            <div class="col-sm-8">
+                <input type="text" [(ngModel)]="search"  class="form-control form-control-md" (keyup)="searchLeadByInput($event.target,'')" 
+            value={{selectedValue}} placeholder="Enter Lead Name ">
+            </div>
+            <div class="col-sm-4">
+                <button class="btn btn-primary" (click)="resetSearchBox()">Clear</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card my-4">
+         <div class="form-group mb-0">
+             <table class="table">
+                 <tbody>
+                     <tr>
+                         <td>
+                             <button type="button" *ngIf="prevButton" class="btn btn-primary btn-sm fa-pull-left" id="buttonStyle" (click)="setPrevNextLeadValues('Prev')"><i class="fas fa-arrow-left"></i></button>
+                         </td>
+                         <td>
+                             <span *ngIf="isData" class="textCenter">{{previewCounter + 1}} / {{totalLeads}}</span>
+                             <span *ngIf="!isData" class="textCenter">No Leads</span>
+                         </td>
+                         <td>
+                             <button type="button" *ngIf="nextButton" class="btn btn-primary fa-pull-right btn-sm" id="buttonStyle" (click)="setPrevNextLeadValues('Next')"><i class="fas fa-arrow-right"></i></button>
+                         </td>
+                     </tr>
+                 </tbody>
+             </table>
+           </div>
+           <form [formGroup]="singleLeadDetails" *ngIf="isData" (ngSubmit)="saveLeadDetails()">
+            <table class="table">
+                <tbody>
+                    <input type="text" [style.display]="'none'" class="form-control"  formControlName = "lead_id">
+                    <tr>
+                        <td><p>Center</p></td>
+                        <td><input type="text" class="form-control"  formControlName = "center"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Address</p></td>
+                        <td><textarea type="text" class="form-control"  formControlName = "address"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><p>City</p></td>
+                        <td><input type="text" class="form-control"  formControlName = "city"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Contact</p></td>
+                        <td><input type="text" class="form-control"  formControlName = "contact"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Mobile</p></td>
+                        <td><input type="text" class="form-control"  formControlName = "mobile"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Landline</p></td>
+                        <td><input type="text" class="form-control" formControlName = "landline"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Pincode</p></td>
+                        <td><input type="text" class="form-control" formControlName = "pincode"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Category</p></td>
+                        <td class="text-left">
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="cat" formControlName= "cat" value="Hot">
+                                <label class="form-check-label" for="cat">Hot</label>
+                              </div>
+                              <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="cat" formControlName= "cat" value="Warm">
+                                <label class="form-check-label" for="cat">Warm</label>
+                              </div>
+                              <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="cat" formControlName= "cat" value="Cold">
+                                <label class="form-check-label" for="cat">Cold</label>
+                              </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p>Action</p></td>
+                        <td class="text-left">
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="action" formControlName= "action" value="Meeting">
+                                <label class="form-check-label" for="action">Meeting</label>
+                              </div>
+                              <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="action" formControlName= "action" value="Call">
+                                <label class="form-check-label" for="action">Call</label>
+                              </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p>Action Date</p></td>
+                        <!-- <td class="text-left"><input style="display: initial; width: 78%;" type="text" class="form-control" formControlName = "actionDate" matInput [ngxMatDatetimePicker]="picker" readonly>
+                            <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+                            <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+                        </td> -->
+                        
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control"  formControlName = "actionDate" matInput [ngxMatDatetimePicker]="picker" readonly>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">
+                                        <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+                                        <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker></span>
+                                  </div> 
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p>Status</p></td>
+                        <td><select class="browser-default custom-select" formControlName="status"> 
+                            <option value= "Call-Later">Call Later</option> 
+                            <option value= "Visit">Visit</option>
+                            <option value= "In-Process">In Process</option>
+                            <option value= "Link-Sent">Link Sent</option>
+                            <option value= "Onboarded">Onboarded</option>
+                            <option value= "Not-Interested">Not Interested</option>
+                            <option value= "Not-Exist">Doesn't Exist</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><p>Remarks</p></td>
+                        <td><textarea type="text" class="form-control"  formControlName = "remark"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+             <div class="form-group mb-3">
+                 <table class="table">
+                    <tbody>
+                        <tr> 
+                           <td colspan="3">
+                               <button type="submit" class="btn btn-success btn-sm textCenter" id="buttonStyle">Save</button>
+                           </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" *ngIf="prevButton" class="btn btn-primary btn-sm fa-pull-left" id="buttonStyle" (click)="setPrevNextLeadValues('Prev')"><i class="fas fa-arrow-left"></i></button>
+                            </td>
+                            <td>
+                               <span *ngIf="isData" class="textCenter">{{previewCounter + 1}} / {{totalLeads}}</span>
+                           </td>
+                            <td>
+                                <button type="button" *ngIf="nextButton" class="btn btn-primary fa-pull-right btn-sm" id="buttonStyle" (click)="setPrevNextLeadValues('Next')"><i class="fas fa-arrow-right"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                 </table>                   
+             </div>
+             <div class="col-sm-12 overflow-auto">
+                <span>History</span>
+            <table class="table table-striped">
+                <thead class="tableHead thStyle">
+                    <th scope="col">Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Remark</th>
+                    <th scope="col">Action</th>
+                    <th scope="col">Action Date</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let hist of historyList">
+                        <td>
+                            {{hist.date | date: "dd/MM/yyyy hh:mm" }}
+                        </td>
+                        <td>
+                            {{hist.status}}
+                        </td>
+                        <td>
+                            {{hist.remarks}}
+                        </td>
+                        <td>
+                            {{hist.action}}
+                        </td>
+                        <td>
+                            {{hist.actionDate.date | date : "dd/MM/yyyy hh:mm a z"}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+         </form>
+        </div>
+         </div>
+ </div>

@@ -1,0 +1,216 @@
+.mainDiv{
+    margin-bottom: 30px;
+    margin-top: 80px;
+}
+/* Added By Asif for UI Improvement */
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 0.3rem;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+input:-webkit-autofill
+{
+ -webkit-text-fill-color: #343a40 !important;
+}
+.form-control {
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #154890;
+    font-size: 10px;
+}
+.btn {
+    font-size: 10px;
+    width: 100px;
+    border-radius: 20px !important;
+}
+.btn-group>.btn-group:not(:first-child), .btn-group>.btn:not(:first-child) {
+    margin-left: -3px;
+}
+
+
+.btn-primary {
+    background-color: #fff;
+    border: none;
+    color: #1F51FF;
+    border: 1px solid #1F51FF;
+}
+.btn-primary-1 {
+    background-color: #0096FF;
+    border: none;
+    border-radius: 0px;
+    color: #fff;
+}
+.btn-primary-2 {
+    background-color: #41c5ef;
+    border: none;
+    border-radius: 0px;
+}
+.btn-warning {
+    background-color: #FFAA00;
+    border: none;
+    border-radius: 0px;
+}
+
+.btn-warning-1 {
+    background-color: #FFD700;
+    border: none;
+    border-radius: 0px;
+}
+.btn-danger {
+    background-color: #FF0033;
+    border: none;
+    border-radius: 0px;
+}
+.btn-success {
+    background-color: #2E8B57;
+    border: none;
+    border-radius: 0px;
+}
+.btn-success-2 {
+    background-color: #32CD32;
+    border: none;
+    border-radius: 0px;
+    color: #fff;
+}
+.btn-success-1 {
+    background-color: #00B345;
+    border: none;
+    border-radius: 0px;
+    color: #fff;
+}
+.text-danger {
+    color: #e12c1d;
+    font-weight: bold;
+}
+.card {
+    box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.47);
+    -webkit-box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.47);
+    -moz-box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.47);
+    border-radius:0px ;
+    border: 1px solid #eee;
+}
+.card-header{
+    text-align: center;
+    height : 50px;
+    font-family: Roboto;
+    color: #ffffff;
+    background-color: #1c4792;
+    border-radius:0px !important;
+}
+label {
+    font-size: 14px;
+    font-weight: 500;
+}
+.navbar-light .navbar-toggler {
+    color: rgb(255 255 255);
+    border: none;
+}
+/* Added By Asif for UI Improvement */
+.tagline{
+    font-family: Roboto;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.taglineNumber{
+    font-family: Roboto;
+    font-size: medium;
+    font-weight: bold;
+    color: crimson;
+}
+.mat-sort-header-content {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.custom-select {
+    display: inline-block;
+    width: 100%;
+    height: 31.11px;
+    padding: .375rem 1.75rem .375rem .75rem;
+    line-height: 1.5;
+    color: #495057;
+    vertical-align: middle;
+    background-size: 8px 10px;
+    border: none;
+    border-bottom: 1px solid #154890;
+    border-radius: 0px;
+    border-radius: 0;
+    -moz-appearance: none;
+    appearance: none;
+}
+.form-check-inline {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+.cal-s .fc .fc-toolbar-title {
+    font-size: 1em;
+    margin: 0;
+}
+.cal-s .fc .fc-button {
+    padding: 0.2em 0.5em !important;
+    font-size: 0.8em !important;
+    line-height: 1.5;
+    border-radius: .25em;
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding-left: 15px;
+    padding-right: 10px;
+    text-align: center;
+}
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    /* font-size: 1rem; */
+    /* font-weight: 400; */
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #f8f9fa;
+    border: 1px solid #ffffff;
+    border-radius: 0.25rem;
+}
+.mat-header-cell {
+    text-align: center;
+}
+/* Mat-Table CSS */
+.mat-dialog-container {
+    display: block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: auto;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    max-height: inherit;
+    padding: 0px !important;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 45px;
+}
+.mat-icon {
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 20px !important;
+    width: 20px !important;
+}
+
+.col-sm-4.mt-3 {
+    padding-bottom: 30px;
+}

@@ -1,0 +1,17 @@
+.file-input {
+    display: none;
+  }
+
+.input-group{
+    padding-bottom: 10px;
+}
+.card{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.countButton{
+    text-align: center;
+    width: 200px;
+}

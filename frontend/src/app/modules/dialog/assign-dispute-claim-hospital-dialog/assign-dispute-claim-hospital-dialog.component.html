@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+        <mat-toolbar color="primary">
+          <span>Assign Disputed</span>
+          <span class="example-spacer"></span>
+          <span mat-dialog-close>
+            <mat-icon>close</mat-icon>
+          </span>  
+        </mat-toolbar>
+    </div>
+    <!-- <div class="row mb-1">
+        <mat-toolbar color="primary">
+          <span>Assign Dispute Hospital</span>
+          <span class="example-spacer"></span>
+          <span [mat-dialog-close]="true">
+            <mat-icon class="close-icon">close</mat-icon>
+          </span>  
+        </mat-toolbar>
+    </div> -->
+    <div class="row  mt-1 p-2">
+        <!-- <div class="col-md-12">
+            <input type="text" class="form-control form-control-md" (keyup)="userInput($event.target)" 
+                  value={{selectedValue}} placeholder="Enter UserName">
+              <label *ngIf="userNoRecord == 'Yes'" style="color: red;">* No User Found!</label>
+              <select *ngIf="UserResData?.length" multiple class="form-control form-control-sm" (change)="userSelected($event)" formControlName="userId" >
+                  <option *ngFor="let userDetails of UserResData" value={{userDetails._id}}>
+                    {{userDetails.user}}
+                  </option>
+              </select>
+        </div> -->
+        <form class="form-inline" [formGroup] = "assignFormData" (ngSubmit)="assignCenter()">
+        <div class="row">
+            <div class="col-md-3">
+                <label class="mt-1">Assign To</label>
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control form-control-md mb-2" (keyup)="userInput($event.target)" 
+                        value={{selectedValue}} placeholder="Enter UserName">
+                    <label *ngIf="userNoRecord == 'Yes'" style="color: red;">* No User Found!</label>
+                    <select *ngIf="UserResData?.length" multiple class="form-control form-control-sm" (change)="userSelected($event)" formControlName="userId" >
+                        <option *ngFor="let userDetails of UserResData" value={{userDetails._id}}>
+                          {{userDetails.user}}
+                        </option>
+                    </select>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-outline-secondary btnMove">Assign</button>
+            </div>
+        </div>
+        </form>
+        <!-- <form class="form-inline" [formGroup] = "assignFormData" (ngSubmit)="assignCenter()">
+            <div class="row">
+                <div class="col-sm-5 mt-2">
+                    <label class="mt-1">Assign To</label>
+                </div>
+                <div class="col-sm-7 mt-2">
+                    <input type="text" class="form-control form-control-md" (keyup)="userInput($event.target)" 
+                        value={{selectedValue}} placeholder="Enter UserName">
+                    <label *ngIf="userNoRecord == 'Yes'" style="color: red;">* No User Found!</label>
+                    <select *ngIf="UserResData?.length" multiple class="form-control form-control-sm" (change)="userSelected($event)" formControlName="userId" >
+                        <option *ngFor="let userDetails of UserResData" value={{userDetails._id}}>
+                          {{userDetails.user}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" >
+                <button type="submit" class="btn btn-outline-secondary btnMove">Assign</button>
+            </div>
+            
+            </form> -->
+    </div>
+    <!-- <div class="row btnMove" >
+        <button class="btn btn-outline-secondary">Assign</button>
+    </div> -->
+    </div>
+
+
+
+

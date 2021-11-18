@@ -1,0 +1,45 @@
+<div class="row my-2">
+  <div class="col-md-6">
+    <label>Direct Reportee :</label> 
+    <select class="browser-default custom-select"  (change)= "directRepSelected($event)">
+        <option value= "" selected>Select</option>  
+        <option *ngFor= "let dirRep of allDirectReportee" [value] = "dirRep._id" >{{ dirRep.name }}</option>
+        <option value="All">All</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label>L2 Reportee:</label> 
+    <select class="browser-default custom-select"  (change)= "directChildSelected($event)">
+        <option value= "" selected>Select</option>  
+        <option *ngFor= "let childRep of allChildReportee" [value] = "childRep._id" >{{ childRep.name }}</option>
+        <option  value="All">All</option>
+    </select>
+  </div>
+</div>
+<div class="col-sm-12 hospTable overflow-auto">
+    <table class="table table-striped col-md-8">
+      <thead class="tableHead thStyle">
+        <tr>
+          <th scope="col">Applied On</th>
+          <th scope="col">Application Id</th>
+          <th scope="col">Borrower Name & Number</th>
+          <th scope="col">Hospital Name & Number</th>
+          <th scope="col">Loan Request</th>
+          <!-- <th scope="col">Application Status</th> -->
+          <th scope="col">Remarks</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let application of applicationResponseList" class="trStyle">
+          <td>{{application.created_on | date : 'dd-MM-yyyy'}}</td>
+          <td>{{application.application_id}}</td>
+          <td>{{application.customer.identity.name}} {{application.customer.mobile}}</td>
+          <td>{{application.hospital.name}} {{application.hospital.mobile}}</td>
+          <td>{{application.loan.request_amount}}</td>
+          <!-- <td>{{getApplicationStatus(application.app_status.status,application.app_status )}}</td> -->
+          <td>{{ application.app_status.remarks }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,47 @@
+<div class="mainDiv">
+  <div class="card text-center">
+    <header class="card-header">
+      <h2 class="card-title">My Network</h2>
+    </header>
+    <div class="card-body text-center">
+      <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+        <!-- Akshay code start -->
+        <label class="btn btn-outline-primary btn-sm active mr-2 fa-pull-left">
+          <input type="radio" name="options" id="option1" (click)="ScreenNaviagte(1)" checked> In
+          process
+          <span class="badge badge-dark">{{ count1 }}</span>
+        </label>
+        <label class="btn btn-sm btn-outline-danger mr-2">
+          <input type="radio" name="options" id="option2" (click)="ScreenNaviagte(2)">On hold <span
+            class="badge badge-dark">{{ count2 }}</span>
+        </label>
+        <label class="btn btn-sm btn-outline-success fa-pull-right">
+          <input type="radio" name="options" id="option3" (click)="ScreenNaviagte(3)"> On Boarded
+          <span class="badge badge-dark">{{ count3 }}</span>
+        </label>
+        <!-- Akshay code end -->
+
+        <!-- Old code start -->
+        <!-- <button type="radio" class="btn btn-sm btn-outline-primary nav-btn mr-2 fa-pull-left"
+          (click)="ScreenNaviagte(1)" name="options" id="option1" autocomplete="off">
+          In Process <span class="badge badge-dark">{{ count1 }}</span>
+        </button>
+        <button type="radio" class="btn btn-outline-danger countButton mr-2" (click)="ScreenNaviagte(2)" name="options"
+          id="option2" autocomplete="off">
+          On Hold <span class="badge badge-dark">{{ count2 }}</span>
+        </button>
+        <button type="radio" class="btn btn-outline-success countButton fa-pull-right" (click)="ScreenNaviagte(3)"
+          name="options" id="option3" autocomplete="off">
+          On Boarded <span class="badge badge-dark">{{ count3 }}</span>
+        </button> -->
+        <!-- Old code end -->
+
+      </div>
+      <div [ngSwitch]="component">
+        <app-centre-inprocess *ngSwitchCase="'inprocess'"></app-centre-inprocess>
+        <app-centre-onhold *ngSwitchCase="'onHold'"></app-centre-onhold>
+        <app-centre-approved *ngSwitchCase="'approved'"></app-centre-approved>
+      </div>
+    </div>
+  </div>
+</div>

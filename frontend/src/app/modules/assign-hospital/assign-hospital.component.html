@@ -1,0 +1,28 @@
+<div class="mainDiv">
+  <div class="card">
+        <div class="card-header" >
+            <h4 class="card-title mt-2">OnBoarded Center</h4>
+            <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-climbing-dot">
+              <p style="color: white">Data Loading is in Progress</p>
+            </ngx-spinner>
+        </div>
+    <div class="card-body text-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary countButton mr-2" (click)="ScreenNaviagte(1)">
+          UnAssigned  <span class="badge badge-dark">{{ count1 }}</span>
+        </button>
+        <button type="button" class="btn btn-success countButton mr-2" (click)="ScreenNaviagte(2)">
+          Assigned  <span class="badge badge-dark">{{ count2 }}</span>
+        </button>
+        <button type="button" class="btn btn-danger countButton mr-2" (click)="ScreenNaviagte(3)">
+          Prev UnAssigned   <span class="badge badge-dark">{{ count3 }}</span>
+        </button>
+      </div>
+        <div [ngSwitch]="component">
+            <app-all-hospital *ngSwitchCase="'all'">  </app-all-hospital>
+            <app-assigned-hospital *ngSwitchCase="'assigned'">  </app-assigned-hospital>
+            <app-inactive-hospital *ngSwitchCase="'inactive'">  </app-inactive-hospital>
+        </div>
+    </div>
+  </div>
+</div>

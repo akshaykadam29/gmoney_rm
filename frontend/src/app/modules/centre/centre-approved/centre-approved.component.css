@@ -1,0 +1,26 @@
+.trStyle{
+    font-size: 12px;
+}
+
+.thStyle{
+    font-size: 14px;
+    align-content: center;
+}
+
+td{
+    word-wrap: break-word;
+    min-width:100px;
+    max-width:150px;
+    font-size: 11px;
+}
+
+.file-field.big .file-path-wrapper {
+    height: 3.2rem; }
+    .file-field.big .file-path-wrapper .file-path {
+    height: 3rem; 
+}
+
+    .file-input {
+        display: none;
+      }
+

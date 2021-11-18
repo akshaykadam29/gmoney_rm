@@ -1,0 +1,51 @@
+<div class="row my-2">
+    <!-- <div class="col-sm-6">
+      <div class="form-outline">
+        <input type="search" id="form1" class="form-control mb-2" placeholder="Search" (keyup)="searchUserInput($event.target)" />
+      </div>
+    </div> -->
+  </div>
+  <div class="mat-elevation-z8 overflow-auto mt-2 p-2">
+      <table mat-table class="full-width-table" matSort aria-label="Elements">
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let element"><button class="btn btn-primary" mat-raised-button (click)="claimHospital(element._id)">Claim</button></td>
+          </ng-container>
+          <ng-container matColumnDef="created">
+            <th mat-header-cell *matHeaderCellDef>Onboarded On</th>
+            <td mat-cell *matCellDef="let element"> {{element.created_on | date : 'dd-MM-yyyy' }}</td>
+        </ng-container>
+          <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef>Network Name</th>
+              <td mat-cell *matCellDef="let element"> {{element.name}}</td>
+          </ng-container>
+          <ng-container matColumnDef="address">
+              <th mat-header-cell *matHeaderCellDef>Network Address</th>
+              <td mat-cell *matCellDef="let element"> {{element.address}}</td>
+          </ng-container>
+          <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef>State</th>
+            <td mat-cell *matCellDef="let element"> {{element.state}}</td>
+          </ng-container>
+          <ng-container matColumnDef="city">
+              <th mat-header-cell *matHeaderCellDef>City</th>
+              <td mat-cell *matCellDef="let element"> {{element.city}}</td>
+          </ng-container>
+          <ng-container matColumnDef="pincode">
+            <th mat-header-cell *matHeaderCellDef>Pincode</th>
+            <td mat-cell *matCellDef="let element"> {{element.pincode}}</td>
+          </ng-container>
+          <ng-container matColumnDef="hid">
+            <th mat-header-cell *matHeaderCellDef>Network Id</th>
+            <td mat-cell *matCellDef="let element"> {{element.hid}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator #paginator 
+      [length]="unClaimedHospital?.data?.length"
+      [pageIndex]="0"
+      [pageSize]="100"
+      [pageSizeOptions]="[100, 500, 1000]">
+  </mat-paginator>
+  </div>
